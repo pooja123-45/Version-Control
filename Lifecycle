@@ -1,1 +1,4 @@
+          git add                  git commit                    git push
+Workarea  --------->  Staging Area -----------> Local Repository ----------> Remote repository
+
 
