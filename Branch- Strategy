@@ -1,1 +1,147 @@
 
+unknown@unknown MINGW64 ~ (master)
+$ cd practice/
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ ls
+index.html  learning/
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ cat index.html
+Hello Pooja
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ echo "My world" > index.html
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ cat index.html
+My world
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ git add .
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ git commit -m "this is for dev branch"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'unknown@unknown.(none)')
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$   git config --global user.email "sompooja128@gmail.com"
+  git config --global user.name "pooja123-45"
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ git commit -m "this is for dev branch"
+[master (root-commit) 1139068] this is for dev branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ git log
+commit 1139068013000a4f9f9ad2558ed4a25c5d566e69 (HEAD -> master)
+Author: pooja123-45 <sompooja128@gmail.com>
+Date:   Fri Jul 18 12:28:25 2025 +0530
+
+    this is for dev branch
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (master)
+$ git branch -M dev
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git branch dev
+fatal: a branch named 'dev' already exists
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git remote add origin https://github.com/pooja123-45/Version-Control.git
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git push origin dev
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 231 bytes | 115.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/pooja123-45/Version-Control/pull/new/dev
+remote:
+To https://github.com/pooja123-45/Version-Control.git
+ * [new branch]      dev -> dev
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git branch test
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git add .
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git commit -m "this is for test env"
+On branch dev
+nothing to commit, working tree clean
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git push origin test
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'test' on GitHub by visiting:
+remote:      https://github.com/pooja123-45/Version-Control/pull/new/test
+remote:
+To https://github.com/pooja123-45/Version-Control.git
+ * [new branch]      test -> test
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git branch
+* dev
+  test
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (dev)
+$ git checkout test
+Switched to branch 'test'
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (test)
+$ git branch
+  dev
+* test
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (test)
+$ git branch staging
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (test)
+$ git checkout statging
+error: pathspec 'statging' did not match any file(s) known to git
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (test)
+$ git checkout staging
+Switched to branch 'staging'
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (staging)
+$ git merge test
+Already up to date.
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (staging)
+$ git push origin staging
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'staging' on GitHub by visiting:
+remote:      https://github.com/pooja123-45/Version-Control/pull/new/staging
+remote:
+To https://github.com/pooja123-45/Version-Control.git
+ * [new branch]      staging -> staging
+------------------------------------------------------------------------------
+unknown@unknown MINGW64 ~/practice (staging)
+$ git branch
+  dev
+* staging
+  test
+------------------------------------------------------------------------------
